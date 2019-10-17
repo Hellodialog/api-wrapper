@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'url' => env('HELLODIALOG_API_URL', 'https://app.hellodialog.com/api'),
+    'url' => env('HELLODIALOG_API_URL', 'https://app.dev.hellodialog.com/api'),
 
     /*
     |--------------------------------------------------------------------------
@@ -24,7 +24,7 @@ return [
     |
     */
 
-    'token' => env('HELLODIALOG_KEY'),
+    'token' => env('4e46a7efbb376aabc657cfb16490c02breset'),
 
     /*
     |--------------------------------------------------------------------------
@@ -36,7 +36,7 @@ return [
     |
     */
     'sender' => [
-        'email' => 'no-reply@your-app.com',
+        'email' => 'no-reply@hellodialog.com',
         'name'  => 'Your App',
     ],
 

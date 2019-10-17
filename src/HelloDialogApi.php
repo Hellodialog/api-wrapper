@@ -100,8 +100,6 @@ class HelloDialogApi implements HelloDialogApiInterface
         $this->path  = ApiType::TRANSACTIONAL;
         $this->token = config('hellodialog.token');
         $this->url   = config('hellodialog.url');
-
-        return $this;
     }
 
     /**

@@ -1,13 +1,12 @@
 <?php
-namespace Czim\HelloDialog\Contracts;
+
+namespace Czim\HelloDialog\Contracts\lists;
 
 use Czim\HelloDialog\Exceptions\HelloDialogErrorException;
 use Czim\HelloDialog\Exceptions\HelloDialogGeneralException;
-use Czim\HelloDialog\Enums\ContactType;
 use Exception;
 
-interface HelloDialogHandlerInterface
+interface ListsInterface
 {
-
 
 }
