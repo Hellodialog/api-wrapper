@@ -16,4 +16,17 @@ interface NewslettersInterface
      * @return string
      */
     public function getTemplateContents($templateId, array $replaces = []);
+
+    /**
+     * @param string|int    $newsletterId
+     * @return array|object    Newsletter object
+     * @throws Exception
+     */
+    public function getNewsletter($newsletterId);
+
+    /**
+     * @return array|object    Newsletters array
+     * @throws Exception
+     */
+    public function getNewsletters();
 }

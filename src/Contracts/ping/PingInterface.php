@@ -8,5 +8,8 @@ use Exception;
 
 interface PingInterface
 {
-
+    /**
+     * @return array
+     */
+    public function getPing();
 }

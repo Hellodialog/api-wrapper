@@ -200,6 +200,18 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
     }
 
     /**
+     * @return array
+     */
+    public function getContacts()
+    {
+        $call = $this->getApiInstance(static::API_CONTACTS)
+            ->condition('voornaam', 'not-existing', 'not-equals');
+        $contacts = $call->get();
+
+        return $contacts ?: [];
+    }
+
+    /**
      * @param string          $email
      * @param string|string[] $type         _state or list of states
      * @param bool            $excludeType  if true and type set, only matches where type does NOT match (any)

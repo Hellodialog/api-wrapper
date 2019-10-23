@@ -42,7 +42,6 @@ class GroupsHandler extends HelloDialogHandler implements GroupsInterface
         // TODO: Implement updateGroup() method.
     }
 
-
     /**
      * @param string|int $groupId
      * @return array|object    Group object

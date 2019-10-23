@@ -10,5 +10,16 @@ use UnexpectedValueException;
 
 class PingHandler extends HelloDialogHandler implements PingInterface
 {
+    const API_PING      = 'ping';
 
+    /**
+     * @return array
+     * @throws Exception
+     */
+    public function getPing()
+    {
+        $call = $this->getApiInstance(static::API_PING);
+
+        return $call->get() ?: [];
+    }
 }

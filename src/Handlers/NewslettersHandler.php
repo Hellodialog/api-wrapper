@@ -10,7 +10,7 @@ use UnexpectedValueException;
 
 class NewslettersHandler extends HelloDialogHandler implements NewslettersInterface
 {
-    const API_NEWSLETTERS   = 'newsletter';
+    const API_NEWSLETTERS   = 'newsletters';
 
     /**
      * Fetches the contents of a template, optionally performing placeholder replaces.
@@ -32,5 +32,26 @@ class NewslettersHandler extends HelloDialogHandler implements NewslettersInterf
         }
 
         return $result;
+    }
+
+    /**
+     * @param string|int $newsletterId
+     * @return array|object    Newsletter object
+     * @throws Exception
+     */
+    public function getNewsletter($newsletterId)
+    {
+        // TODO: Implement getNewsletter() method.
+    }
+
+    /**
+     * @return array|object    Newsletters array
+     * @throws Exception
+     */
+    public function getNewsletters()
+    {
+        $call = $this->getApiInstance(static::API_NEWSLETTERS);
+
+        return $call->get() ?: [];
     }
 }

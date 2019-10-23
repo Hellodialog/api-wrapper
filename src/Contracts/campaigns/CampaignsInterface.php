@@ -8,4 +8,16 @@ use Exception;
 interface CampaignsInterface
 {
 
+    /**
+     * @param string|int    $campaignId
+     * @return array|object    Campaign object
+     * @throws Exception
+     */
+    public function getCampaign($campaignId);
+
+    /**
+     * @return array|object    Campaigns array
+     * @throws Exception
+     */
+    public function getCampaigns();
 }

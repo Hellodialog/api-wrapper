@@ -33,22 +33,13 @@ class HelloDialogServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/config/hellodialog.php' => config_path('hellodialog.php'),
-        ]);
-
         $this->registerHelloDialogMailDriver();
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__ . '/config/hellodialog.php', 'hellodialog'
-        );
-
         $this->registerHelloDialogInterfaces();
     }
-
 
     /**
      * Registers Hello Dialog class interfaces

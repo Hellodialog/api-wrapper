@@ -8,5 +8,15 @@ use Exception;
 
 interface OrdersInterface
 {
+    /**
+     * @return array
+     */
+    public function getOrders();
 
+    /**
+     * @param string|int    $orderId
+     * @return array|object    Order object
+     * @throws Exception
+     */
+    public function getOrder($orderId);
 }

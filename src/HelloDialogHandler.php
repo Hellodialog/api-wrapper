@@ -7,7 +7,6 @@ use Czim\HelloDialog\Contracts\HelloDialogHandlerInterface;
 use Czim\HelloDialog\Exceptions\HelloDialogErrorException;
 use Czim\HelloDialog\Exceptions\HelloDialogGeneralException;
 use Exception;
-use Log;
 use Psr\Log\LoggerInterface;
 use UnexpectedValueException;
 
@@ -87,7 +86,7 @@ class HelloDialogHandler implements
     protected function normalizeTemplate($template)
     {
         if (is_string($template)) {
-            $template = config('hellodialog.templates.' . $template .'.id');
+            $template = 1;
 
             if ( ! $template) {
                 throw new UnexpectedValueException("Could not find template ID by name '{$template}'.");
@@ -148,8 +147,9 @@ class HelloDialogHandler implements
             $this->logger->log($level, $message, $extra);
             return;
         }
-
-        Log::log($level, $message, $extra);
+        echo 'Level: '. $level .'<br />';
+        echo 'Message: '. $message .'<br />';
+        echo 'Extra: '; var_dump($extra);
     }
 
 }

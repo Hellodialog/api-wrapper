@@ -8,5 +8,8 @@ use Exception;
 
 interface LoginInterface
 {
-
+    /**
+     * @return array
+     */
+    public function getLogin();
 }

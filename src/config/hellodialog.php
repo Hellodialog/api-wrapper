@@ -1,127 +1,132 @@
 <?php
+    $app = require_once ('bootstrap/app.php');
+    use \Czim\HelloDialog\HelloDialogServiceProvider;
 
-return [
+    $serviceProvider = new HelloDialogServiceProvider($app);
+    $serviceProvider->register();
+    return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Hello Dialog API location
-    |--------------------------------------------------------------------------
-    |
-    | The Hello Dialog API address.
-    | Requires a trailing slash.
-    |
-    */
+            /*
+            |--------------------------------------------------------------------------
+            | Hello Dialog API location
+            |--------------------------------------------------------------------------
+            |
+            | The Hello Dialog API address.
+            | Requires a trailing slash.
+            |
+            */
 
-    'url' => env('HELLODIALOG_API_URL', 'https://app.dev.hellodialog.com/api'),
+            'url' => env('HELLODIALOG_API_URL', 'http://app.dev.hellodialog.com/api'),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Hello Dialog API Key
-    |--------------------------------------------------------------------------
-    |
-    | The Hello Dialog API expects this token for the account to which the
-    | app is registered. It should be a 32 character hexadecimal string
-    |
-    */
+            /*
+            |--------------------------------------------------------------------------
+            | Hello Dialog API Key
+            |--------------------------------------------------------------------------
+            |
+            | The Hello Dialog API expects this token for the account to which the
+            | app is registered. It should be a 32 character hexadecimal string
+            |
+            */
 
-    'token' => env('4e46a7efbb376aabc657cfb16490c02breset'),
+            'token' => env('4e46a7efbb376aabc657cfb16490c02b'),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Sender / From Details
-    |--------------------------------------------------------------------------
-    |
-    | The sender that will be used when the HelloDialog transactional mails
-    | are sent out. This should probably be a standard no-reply address.
-    |
-    */
-    'sender' => [
-        'email' => 'no-reply@hellodialog.com',
-        'name'  => 'Your App',
-    ],
+            /*
+            |--------------------------------------------------------------------------
+            | Sender / From Details
+            |--------------------------------------------------------------------------
+            |
+            | The sender that will be used when the HelloDialog transactional mails
+            | are sent out. This should probably be a standard no-reply address.
+            |
+            */
 
-    /*
-    |--------------------------------------------------------------------------
-    | Mail Facade
-    |--------------------------------------------------------------------------
-    |
-    | Configuration for using the Mail facade with the hellodialog driver
-    |
-    */
+            'sender' => [
+                'email' => 'no-reply@hellodialog.com',
+                'name'  => 'Your App',
+            ],
 
-    'mail' => [
-        // Template ID to use
-        'template' => 1,
+            /*
+            |--------------------------------------------------------------------------
+            | Mail Facade
+            |--------------------------------------------------------------------------
+            |
+            | Configuration for using the Mail facade with the hellodialog driver
+            |
+            */
 
-        // Expected replaces for typical transactional mails
-        // These MUST have a content replace, and MAY have a title replace.
-        'replaces' => [
-            'title'   => '__TITLE__',
-            'content' => '__CONTENT__',
-        ],
+            'mail' => [
+                // Template ID to use
+                'template' => 1,
 
-        // Set as array to set specific sender, or null to use default
-        'sender' => null,
-    ],
+                // Expected replaces for typical transactional mails
+                // These MUST have a content replace, and MAY have a title replace.
+                'replaces' => [
+                    'title'   => '__TITLE__',
+                    'content' => '__CONTENT__',
+                ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Templates
-    |--------------------------------------------------------------------------
-    |
-    | The default template set will be used when no template is given.
-    | Other / custom templates may be defined here.
-    |
-    */
+                // Set as array to set specific sender, or null to use default
+                'sender' => null,
+            ],
 
-    'default_template' => 'transactional',
+            /*
+            |--------------------------------------------------------------------------
+            | Templates
+            |--------------------------------------------------------------------------
+            |
+            | The default template set will be used when no template is given.
+            | Other / custom templates may be defined here.
+            |
+            */
 
-    'templates' => [
-        'transactional' => [
-            'id' => 1,
-        ],
-    ],
+            'default_template' => 'transactional',
 
-    /*
-    |--------------------------------------------------------------------------
-    | Queue
-    |--------------------------------------------------------------------------
-    |
-    | Whether to send mail through the queue by default, or, if set to false,
-    | to send synchronized instead.
-    |
-    */
+            'templates' => [
+                'transactional' => [
+                    'id' => 1,
+                ],
+            ],
 
-    'queue' => false,
+            /*
+            |--------------------------------------------------------------------------
+            | Queue
+            |--------------------------------------------------------------------------
+            |
+            | Whether to send mail through the queue by default, or, if set to false,
+            | to send synchronized instead.
+            |
+            */
 
-    /*
-    |--------------------------------------------------------------------------
-    | Debugging Options
-    |--------------------------------------------------------------------------
-    |
-    | In order to debug mailings, you can opt to enable debug logging of relevant
-    | transactions, or prevent mailings from going out by 'mocking' them.
-    |
-    | 'mock' will log the mailing content to the log instead.
-    |
-    */
+            'queue' => false,
 
-    'debug' => env('HELLODIALOG_DEBUG', false),
-    'mock'  => env('HELLODIALOG_MOCK', false),
+            /*
+            |--------------------------------------------------------------------------
+            | Debugging Options
+            |--------------------------------------------------------------------------
+            |
+            | In order to debug mailings, you can opt to enable debug logging of relevant
+            | transactions, or prevent mailings from going out by 'mocking' them.
+            |
+            | 'mock' will log the mailing content to the log instead.
+            |
+            */
 
-    /*
-    |--------------------------------------------------------------------------
-    | Guzzle Client Options
-    |--------------------------------------------------------------------------
-    |
-    | Global configuration of client options.
-    |
-    */
+            'debug' => env('HELLODIALOG_DEBUG', false),
+            'mock'  => env('HELLODIALOG_MOCK', false),
 
-    'client' => [
+            /*
+            |--------------------------------------------------------------------------
+            | Guzzle Client Options
+            |--------------------------------------------------------------------------
+            |
+            | Global configuration of client options.
+            |
+            */
 
-        'verify-ssl' => false,
+            'client' => [
 
-    ],
+                'verify-ssl' => false,
 
-];
+            ],
+
+    ];

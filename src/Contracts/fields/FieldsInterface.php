@@ -6,5 +6,8 @@ use Exception;
 
 interface FieldsInterface
 {
-
+    /**
+     * @return array
+     */
+    public function getFields();
 }

@@ -10,5 +10,15 @@ use UnexpectedValueException;
 
 class LoginHandler extends HelloDialogHandler implements LoginInterface
 {
+    const API_LOGIN      = 'login';
 
+    /**
+     * @return array
+     */
+    public function getLogin()
+    {
+        $call = $this->getApiInstance(static::API_LOGIN);
+
+        return $call->get() ?: [];
+    }
 }

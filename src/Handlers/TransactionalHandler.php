@@ -28,9 +28,9 @@ class TransactionalHandler extends HelloDialogHandler implements TransactionalIn
      */
     public function transactional($to, $subject, $template = null, array $from = null, array $replaces = [], $replyToMail = null)
     {
-        $from = $from ?: config('hellodialog.sender');
+        $from = $from ?: 'info@hellodialog.com';//config('hellodialog.sender');
 
-        $template = $template ?: config('hellodialog.default_template');
+        $template = $template ?: 'transactional';//config('hellodialog.default_template');
         $template = $this->normalizeTemplate($template);
 
         // Build normalized replaces array
@@ -72,12 +72,12 @@ class TransactionalHandler extends HelloDialogHandler implements TransactionalIn
                 throw new HelloDialogGeneralException('No result given, configuration error?');
             }
 
-            if (config('hellodialog.debug')) {
+            /*if (config('hellodialog.debug')) {
                 $this->log(static::API_TRANSACTIONAL, 'debug', [
                     'data'   => $data,
                     'result' => $result,
                 ]);
-            }
+            }*/
 
             $this->checkForHelloDialogError($result);
 

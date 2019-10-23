@@ -52,4 +52,9 @@ interface ContactsInterface
      * @return array
      */
     public function getContactsByEmail($email, $type = null, $excludeType = false);
+
+    /**
+     * @return array
+     */
+    public function getContacts();
 }

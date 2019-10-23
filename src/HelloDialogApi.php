@@ -98,8 +98,8 @@ class HelloDialogApi implements HelloDialogApiInterface
         $this->logger = $logger ?: app('log');
 
         $this->path  = ApiType::TRANSACTIONAL;
-        $this->token = config('hellodialog.token');
-        $this->url   = config('hellodialog.url');
+        $this->token = '4e46a7efbb376aabc657cfb16490c02b';//config('hellodialog.token');
+        $this->url   = 'http://app.dev.hellodialog.com/api';//config('hellodialog.url');
     }
 
     /**
@@ -255,7 +255,7 @@ class HelloDialogApi implements HelloDialogApiInterface
         $this->checkBeforeRequest();
 
         // mock the call instead?
-        if (config('hellodialog.mock')) {
+        /*if (config('hellodialog.mock')) {
             $this->logger->debug("Mocked {$method} request to HelloDialog.", [
                 'id'         => $id,
                 'data'       => $this->data,
@@ -263,7 +263,7 @@ class HelloDialogApi implements HelloDialogApiInterface
             ]);
 
             return $this->makeMockResponse();
-        }
+        }*/
 
         // prepare the URL
         $url = $this->getBaseUrl();
@@ -318,7 +318,7 @@ class HelloDialogApi implements HelloDialogApiInterface
     protected function buildGuzzleOptions($method = 'GET')
     {
         $options = [
-            'verify' => config('hellodialog.client.verify-ssl', false),
+            'verify' => false, //config('hellodialog.client.verify-ssl', false),
         ];
 
         // set data in body for PUT, POST or PATCH
