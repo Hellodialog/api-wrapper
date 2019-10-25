@@ -8,8 +8,8 @@
  *
  */
 
-use Czim\HelloDialog\Contracts\fields\Field;
-use Czim\HelloDialog\Handlers\FieldsHandler;
+use Hellodialog\ApiWrapper\Contracts\fields\Field;
+use Hellodialog\ApiWrapper\Handlers\FieldsHandler;
 require_once('../vendor/autoload.php');
 require_once('../src/config/Hellodialog.php');
 

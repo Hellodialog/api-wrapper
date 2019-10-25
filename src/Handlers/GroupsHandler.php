@@ -1,9 +1,9 @@
 <?php
-namespace Czim\HelloDialog\Handlers;
+namespace Hellodialog\ApiWrapper\Handlers;
 
-use Czim\HelloDialog\Contracts\groups\Group;
-use Czim\HelloDialog\Contracts\groups\GroupsInterface;
-use Czim\HelloDialog\HelloDialogHandler;
+use Hellodialog\ApiWrapper\Contracts\groups\Group;
+use Hellodialog\ApiWrapper\Contracts\groups\GroupsInterface;
+use Hellodialog\ApiWrapper\HelloDialogHandler;
 use Exception;
 
 class GroupsHandler extends HelloDialogHandler implements GroupsInterface

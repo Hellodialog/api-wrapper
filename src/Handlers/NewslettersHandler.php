@@ -1,9 +1,9 @@
 <?php
-namespace Czim\HelloDialog\Handlers;
+namespace Hellodialog\ApiWrapper\Handlers;
 
-use Czim\HelloDialog\Contracts\newsletters\Newsletter;
-use Czim\HelloDialog\Contracts\newsletters\NewslettersInterface;
-use Czim\HelloDialog\HelloDialogHandler;
+use Hellodialog\ApiWrapper\Contracts\newsletters\Newsletter;
+use Hellodialog\ApiWrapper\Contracts\newsletters\NewslettersInterface;
+use Hellodialog\ApiWrapper\HelloDialogHandler;
 use Exception;
 use Log;
 use Psr\Log\LoggerInterface;

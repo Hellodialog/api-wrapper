@@ -1,5 +1,5 @@
 <?php
-namespace Czim\HelloDialog\Handlers;
+namespace Hellodialog\ApiWrapper\Handlers;
 
 use Psr\Log\LoggerInterface;
 

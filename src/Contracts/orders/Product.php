@@ -1,9 +1,9 @@
 <?php
 /**
  * Class Product
- * @package Czim\HelloDialog\Contracts\orders
+ * @package Hellodialog\ApiWrapper\Contracts\orders
  */
-namespace Czim\HelloDialog\Contracts\orders;
+namespace Hellodialog\ApiWrapper\Contracts\orders;
 
 
 class Product

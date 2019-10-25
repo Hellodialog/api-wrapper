@@ -8,7 +8,7 @@
  *
  */
 
-use Czim\HelloDialog\Handlers\GlobalHandler;
+use Hellodialog\ApiWrapper\Handlers\GlobalHandler;
 require_once('../vendor/autoload.php');
 require_once('../src/config/Hellodialog.php');
 

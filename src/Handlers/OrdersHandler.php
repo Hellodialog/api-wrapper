@@ -1,9 +1,9 @@
 <?php
-namespace Czim\HelloDialog\Handlers;
+namespace Hellodialog\ApiWrapper\Handlers;
 
-use Czim\HelloDialog\Contracts\orders\Order;
-use Czim\HelloDialog\Contracts\orders\OrdersInterface;
-use Czim\HelloDialog\HelloDialogHandler;
+use Hellodialog\ApiWrapper\Contracts\orders\Order;
+use Hellodialog\ApiWrapper\Contracts\orders\OrdersInterface;
+use Hellodialog\ApiWrapper\HelloDialogHandler;
 use Exception;
 
 class OrdersHandler extends HelloDialogHandler implements OrdersInterface

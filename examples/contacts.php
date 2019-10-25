@@ -8,8 +8,8 @@
  *
  */
 
-use Czim\HelloDialog\Contracts\contacts\Contact;
-use Czim\HelloDialog\Handlers\ContactsHandler;
+use Hellodialog\ApiWrapper\Contracts\contacts\Contact;
+use Hellodialog\ApiWrapper\Handlers\ContactsHandler;
 require_once('vendor/autoload.php');
 require_once('src/config/Hellodialog.php');
 

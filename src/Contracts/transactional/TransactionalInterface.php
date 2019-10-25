@@ -1,10 +1,10 @@
 <?php
 
-namespace Czim\HelloDialog\Contracts\transactional;
+namespace Hellodialog\ApiWrapper\Contracts\transactional;
 
-use Czim\HelloDialog\Enums\ContactType;
-use Czim\HelloDialog\Exceptions\HelloDialogErrorException;
-use Czim\HelloDialog\Exceptions\HelloDialogGeneralException;
+use Hellodialog\ApiWrapper\Enums\ContactType;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogErrorException;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogGeneralException;
 use Exception;
 
 interface TransactionalInterface

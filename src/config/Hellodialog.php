@@ -1,8 +1,8 @@
 <?php
-    namespace Czim\HelloDialog\config;
+    namespace Hellodialog\ApiWrapper\config;
 
     $app = require_once ('../bootstrap/app.php');
-    use \Czim\HelloDialog\HelloDialogServiceProvider;
+    use \Hellodialog\ApiWrapper\HelloDialogServiceProvider;
 
     $serviceProvider = new HelloDialogServiceProvider($app);
     $serviceProvider->register();

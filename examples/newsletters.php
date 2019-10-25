@@ -8,8 +8,8 @@
  *
  */
 
-use Czim\HelloDialog\Contracts\newsletters\Newsletter;
-use Czim\HelloDialog\Handlers\NewslettersHandler;
+use Hellodialog\ApiWrapper\Contracts\newsletters\Newsletter;
+use Hellodialog\ApiWrapper\Handlers\NewslettersHandler;
 require_once('../vendor/autoload.php');
 require_once('../src/config/Hellodialog.php');
 

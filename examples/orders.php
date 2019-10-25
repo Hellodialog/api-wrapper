@@ -8,9 +8,9 @@
  *
  */
 
-use Czim\HelloDialog\Contracts\orders\Order;
-use Czim\HelloDialog\Contracts\orders\Product;
-use Czim\HelloDialog\Handlers\OrdersHandler;
+use Hellodialog\ApiWrapper\Contracts\orders\Order;
+use Hellodialog\ApiWrapper\Contracts\orders\Product;
+use Hellodialog\ApiWrapper\Handlers\OrdersHandler;
 require_once('../vendor/autoload.php');
 require_once('../src/config/Hellodialog.php');
 

@@ -1,9 +1,9 @@
 <?php
-namespace Czim\HelloDialog\Handlers;
+namespace Hellodialog\ApiWrapper\Handlers;
 
-use Czim\HelloDialog\Contracts\lists\ListsInterface;
-use Czim\HelloDialog\Contracts\lists\Segment;
-use Czim\HelloDialog\HelloDialogHandler;
+use Hellodialog\ApiWrapper\Contracts\lists\ListsInterface;
+use Hellodialog\ApiWrapper\Contracts\lists\Segment;
+use Hellodialog\ApiWrapper\HelloDialogHandler;
 use Exception;
 use Log;
 use Psr\Log\LoggerInterface;

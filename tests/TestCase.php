@@ -1,7 +1,7 @@
 <?php
-namespace Czim\HelloDialog\Test;
+namespace Hellodialog\ApiWrapper\Test;
 
-use Czim\HelloDialog\HelloDialogApi;
+use Hellodialog\ApiWrapper\HelloDialogApi;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Handler\MockHandler;

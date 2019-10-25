@@ -1,9 +1,9 @@
 <?php
 /**
  * Class Field
- * @package Czim\HelloDialog\Contracts\fields
+ * @package Hellodialog\ApiWrapper\Contracts\fields
  */
-namespace Czim\HelloDialog\Contracts\fields;
+namespace Hellodialog\ApiWrapper\Contracts\fields;
 
 class Field {
 

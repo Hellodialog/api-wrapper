@@ -8,8 +8,8 @@
  *
  */
 
-use Czim\HelloDialog\Contracts\groups\Group;
-use Czim\HelloDialog\Handlers\GroupsHandler;
+use Hellodialog\ApiWrapper\Contracts\groups\Group;
+use Hellodialog\ApiWrapper\Handlers\GroupsHandler;
 require_once('../vendor/autoload.php');
 require_once('../src/config/Hellodialog.php');
 

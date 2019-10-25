@@ -1,8 +1,8 @@
 <?php
-namespace Czim\HelloDialog\Handlers;
+namespace Hellodialog\ApiWrapper\Handlers;
 
-use Czim\HelloDialog\Contracts\ping\PingInterface;
-use Czim\HelloDialog\HelloDialogHandler;
+use Hellodialog\ApiWrapper\Contracts\ping\PingInterface;
+use Hellodialog\ApiWrapper\HelloDialogHandler;
 use Exception;
 use Log;
 use Psr\Log\LoggerInterface;

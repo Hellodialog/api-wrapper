@@ -1,9 +1,9 @@
 <?php
 /**
  * Class Segment
- * @package Czim\HelloDialog\Contracts\lists
+ * @package Hellodialog\ApiWrapper\Contracts\lists
  */
-namespace Czim\HelloDialog\Contracts\lists;
+namespace Hellodialog\ApiWrapper\Contracts\lists;
 
 class Segment {
 

@@ -8,7 +8,7 @@
  *
  */
 
-use Czim\HelloDialog\Handlers\StatisticsHandler;
+use Hellodialog\ApiWrapper\Handlers\StatisticsHandler;
 require_once('../vendor/autoload.php');
 require_once('../src/config/Hellodialog.php');
 

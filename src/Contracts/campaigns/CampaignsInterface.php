@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\HelloDialog\Contracts\campaigns;
+namespace Hellodialog\ApiWrapper\Contracts\campaigns;
 
-use Czim\HelloDialog\Enums\ContactType;
+use Hellodialog\ApiWrapper\Enums\ContactType;
 use Exception;
 
 interface CampaignsInterface

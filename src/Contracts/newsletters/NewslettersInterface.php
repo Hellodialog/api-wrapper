@@ -1,9 +1,9 @@
 <?php
 
-namespace Czim\HelloDialog\Contracts\newsletters;
+namespace Hellodialog\ApiWrapper\Contracts\newsletters;
 
-use Czim\HelloDialog\Exceptions\HelloDialogErrorException;
-use Czim\HelloDialog\Exceptions\HelloDialogGeneralException;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogErrorException;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogGeneralException;
 use Exception;
 
 interface NewslettersInterface

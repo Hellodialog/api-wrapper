@@ -1,5 +1,5 @@
 <?php
-namespace Czim\HelloDialog\Test;
+namespace Hellodialog\ApiWrapper\Test;
 
 class HelloDialogApiTest extends TestCase
 {
@@ -26,7 +26,7 @@ class HelloDialogApiTest extends TestCase
 
     /**
      * @test
-     * @expectedException \Czim\HelloDialog\Exceptions\ConnectionException
+     * @expectedException \Hellodialog\ApiWrapper\Exceptions\ConnectionException
      */
     function it_throws_an_exception_if_it_does_not_receive_json()
     {
@@ -41,7 +41,7 @@ class HelloDialogApiTest extends TestCase
 
     /**
      * @test
-     * @expectedException \Czim\HelloDialog\Exceptions\ConnectionException
+     * @expectedException \Hellodialog\ApiWrapper\Exceptions\ConnectionException
      */
     function it_throws_an_exception_if_it_receives_a_non_200_status_code()
     {

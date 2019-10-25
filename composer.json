@@ -1,17 +1,24 @@
 {
-    "name": "czim/hellodialog",
+    "name": "hellodialog/apiwrapper",
     "description": "HelloDialog e-mail marketing API handler",
     "keywords": [
         "hellodialog",
-        "email-marketing"
+        "email-marketing",
+        "api"
     ],
-    "homepage": "https://github.com/czim/hellodialog",
+    "homepage": "https://github.com/Hellodialog/api-wrapper",
     "license": "MIT",
     "authors": [
         {
+            "name": "Bart Ros",
+            "email": "bart@hellodialog.com",
+            "homepage": "https://hellodialog.com",
+            "role": "Developer"
+        },
+        {
             "name": "Coen Zimmerman",
             "email": "coen@pixelindustries.com",
-            "homepage": "http://www.pixelindustries.com",
+            "homepage": "https://pxlwidgets.com",
             "role": "Developer"
         }
     ],
@@ -28,12 +35,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Czim\\HelloDialog\\": "src"
+            "Hellodialog\\ApiWrapper\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Czim\\HelloDialog\\Test\\": "tests"
+            "Hellodialog\\ApiWrapper\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -43,8 +50,5 @@
         "branch-alias": {
             "dev-master": "1.0-dev"
         }
-    },
-    "suggest": {
-        "pixelindustries/laravel-hellodialog": "Improved, supported version of this package (not open source at the moment)"
     }
 }

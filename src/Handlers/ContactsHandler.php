@@ -1,10 +1,10 @@
 <?php
-namespace Czim\HelloDialog\Handlers;
+namespace Hellodialog\ApiWrapper\Handlers;
 
-use Czim\HelloDialog\Contracts\contacts\Contact;
-use Czim\HelloDialog\Contracts\contacts\ContactsInterface;
-use Czim\HelloDialog\Enums\ContactType;
-use Czim\HelloDialog\HelloDialogHandler;
+use Hellodialog\ApiWrapper\Contracts\contacts\Contact;
+use Hellodialog\ApiWrapper\Contracts\contacts\ContactsInterface;
+use Hellodialog\ApiWrapper\Enums\ContactType;
+use Hellodialog\ApiWrapper\HelloDialogHandler;
 use Exception;
 
 class ContactsHandler extends HelloDialogHandler implements ContactsInterface {

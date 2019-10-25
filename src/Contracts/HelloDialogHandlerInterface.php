@@ -1,9 +1,9 @@
 <?php
-namespace Czim\HelloDialog\Contracts;
+namespace Hellodialog\ApiWrapper\Contracts;
 
-use Czim\HelloDialog\Exceptions\HelloDialogErrorException;
-use Czim\HelloDialog\Exceptions\HelloDialogGeneralException;
-use Czim\HelloDialog\Enums\ContactType;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogErrorException;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogGeneralException;
+use Hellodialog\ApiWrapper\Enums\ContactType;
 use Exception;
 
 interface HelloDialogHandlerInterface

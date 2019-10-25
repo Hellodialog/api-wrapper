@@ -1,6 +1,6 @@
 <?php
 
-namespace Czim\HelloDialog\Contracts\groups;
+namespace Hellodialog\ApiWrapper\Contracts\groups;
 
 use Exception;
 

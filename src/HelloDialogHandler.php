@@ -1,11 +1,11 @@
 <?php
-namespace Czim\HelloDialog;
+namespace Hellodialog\ApiWrapper;
 
-use Czim\HelloDialog\Contracts\HelloDialogApiFactoryInterface;
-use Czim\HelloDialog\Contracts\HelloDialogApiInterface;
-use Czim\HelloDialog\Contracts\HelloDialogHandlerInterface;
-use Czim\HelloDialog\Exceptions\HelloDialogErrorException;
-use Czim\HelloDialog\Exceptions\HelloDialogGeneralException;
+use Hellodialog\ApiWrapper\Contracts\HelloDialogApiFactoryInterface;
+use Hellodialog\ApiWrapper\Contracts\HelloDialogApiInterface;
+use Hellodialog\ApiWrapper\Contracts\HelloDialogHandlerInterface;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogErrorException;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogGeneralException;
 use Exception;
 use Psr\Log\LoggerInterface;
 use UnexpectedValueException;

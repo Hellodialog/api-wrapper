@@ -1,9 +1,9 @@
 <?php
 /**
  * Class Newsletter
- * @package Czim\HelloDialog\Contracts\newsletters
+ * @package Hellodialog\ApiWrapper\Contracts\newsletters
  */
-namespace Czim\HelloDialog\Contracts\newsletters;
+namespace Hellodialog\ApiWrapper\Contracts\newsletters;
 
 class Newsletter {
 

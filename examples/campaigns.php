@@ -8,7 +8,7 @@
  *
  */
 
-use Czim\HelloDialog\Handlers\CampaignsHandler;
+use Hellodialog\ApiWrapper\Handlers\CampaignsHandler;
 require_once('vendor/autoload.php');
 require_once('src/config/Hellodialog.php');
 

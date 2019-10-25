@@ -1,9 +1,9 @@
 <?php
 
-namespace Czim\HelloDialog\Contracts\statistics;
+namespace Hellodialog\ApiWrapper\Contracts\statistics;
 
-use Czim\HelloDialog\Exceptions\HelloDialogErrorException;
-use Czim\HelloDialog\Exceptions\HelloDialogGeneralException;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogErrorException;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogGeneralException;
 use Exception;
 
 interface StatisticsInterface

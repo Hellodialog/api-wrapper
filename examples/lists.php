@@ -8,8 +8,8 @@
  *
  */
 
-use Czim\HelloDialog\Contracts\lists\Segment;
-use Czim\HelloDialog\Handlers\ListsHandler;
+use Hellodialog\ApiWrapper\Contracts\lists\Segment;
+use Hellodialog\ApiWrapper\Handlers\ListsHandler;
 require_once('../vendor/autoload.php');
 require_once('../src/config/Hellodialog.php');
 

@@ -1,8 +1,8 @@
 <?php
-namespace Czim\HelloDialog\Handlers;
+namespace Hellodialog\ApiWrapper\Handlers;
 
-use Czim\HelloDialog\Contracts\statistics\StatisticsInterface;
-use Czim\HelloDialog\HelloDialogHandler;
+use Hellodialog\ApiWrapper\Contracts\statistics\StatisticsInterface;
+use Hellodialog\ApiWrapper\HelloDialogHandler;
 use Exception;
 use Log;
 use Psr\Log\LoggerInterface;

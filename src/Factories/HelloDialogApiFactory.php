@@ -1,9 +1,9 @@
 <?php
-namespace Czim\HelloDialog\Factories;
+namespace Hellodialog\ApiWrapper\Factories;
 
-use Czim\HelloDialog\Contracts\HelloDialogApiFactoryInterface;
-use Czim\HelloDialog\Contracts\HelloDialogApiInterface;
-use Czim\HelloDialog\HelloDialogApi;
+use Hellodialog\ApiWrapper\Contracts\HelloDialogApiFactoryInterface;
+use Hellodialog\ApiWrapper\Contracts\HelloDialogApiInterface;
+use Hellodialog\ApiWrapper\HelloDialogApi;
 
 class HelloDialogApiFactory implements HelloDialogApiFactoryInterface
 {

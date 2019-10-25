@@ -1,6 +1,6 @@
 <?php
 
-namespace Czim\HelloDialog\Contracts\fields;
+namespace Hellodialog\ApiWrapper\Contracts\fields;
 
 use Exception;
 

@@ -1,9 +1,9 @@
 <?php
 /**
  * Class Contact
- * @package Czim\HelloDialog\Contracts\contacts
+ * @package Hellodialog\ApiWrapper\Contracts\contacts
  */
-namespace Czim\HelloDialog\Contracts\contacts;
+namespace Hellodialog\ApiWrapper\Contracts\contacts;
 
 class Contact {
 

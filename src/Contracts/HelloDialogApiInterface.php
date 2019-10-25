@@ -1,5 +1,5 @@
 <?php
-namespace Czim\HelloDialog\Contracts;
+namespace Hellodialog\ApiWrapper\Contracts;
 
 use Exception;
 

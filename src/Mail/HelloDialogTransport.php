@@ -1,7 +1,7 @@
 <?php
-namespace Czim\HelloDialog\Mail;
+namespace Hellodialog\ApiWrapper\Mail;
 
-use Czim\HelloDialog\Contracts\HelloDialogHandlerInterface;
+use Hellodialog\ApiWrapper\Contracts\HelloDialogHandlerInterface;
 use Illuminate\Mail\Transport\Transport;
 use Swift_Mime_Message;
 

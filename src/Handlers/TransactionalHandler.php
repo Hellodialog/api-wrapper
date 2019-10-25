@@ -1,12 +1,12 @@
 <?php
-namespace Czim\HelloDialog\Handlers;
+namespace Hellodialog\ApiWrapper\Handlers;
 
-use Czim\HelloDialog\config\Hellodialog;
-use Czim\HelloDialog\Contracts\transactional\TransactionalInterface;
-use Czim\HelloDialog\Enums\ContactType;
-use Czim\HelloDialog\Exceptions\HelloDialogErrorException;
-use Czim\HelloDialog\Exceptions\HelloDialogGeneralException;
-use Czim\HelloDialog\HelloDialogHandler;
+use Hellodialog\ApiWrapper\config\Hellodialog;
+use Hellodialog\ApiWrapper\Contracts\transactional\TransactionalInterface;
+use Hellodialog\ApiWrapper\Enums\ContactType;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogErrorException;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogGeneralException;
+use Hellodialog\ApiWrapper\HelloDialogHandler;
 use Exception;
 use Log;
 use Psr\Log\LoggerInterface;

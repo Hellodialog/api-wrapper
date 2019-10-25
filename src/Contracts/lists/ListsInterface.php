@@ -1,9 +1,9 @@
 <?php
 
-namespace Czim\HelloDialog\Contracts\lists;
+namespace Hellodialog\ApiWrapper\Contracts\lists;
 
-use Czim\HelloDialog\Exceptions\HelloDialogErrorException;
-use Czim\HelloDialog\Exceptions\HelloDialogGeneralException;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogErrorException;
+use Hellodialog\ApiWrapper\Exceptions\HelloDialogGeneralException;
 use Exception;
 
 interface ListsInterface

@@ -1,9 +1,9 @@
 <?php
 /**
  * Class Group
- * @package Czim\HelloDialog\Contracts\groups
+ * @package Hellodialog\ApiWrapper\Contracts\groups
  */
-namespace Czim\HelloDialog\Contracts\groups;
+namespace Hellodialog\ApiWrapper\Contracts\groups;
 
 class Group {
 

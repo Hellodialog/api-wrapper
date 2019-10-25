@@ -1,10 +1,10 @@
 <?php
-namespace Czim\HelloDialog;
+namespace Hellodialog\ApiWrapper;
 
-use Czim\HelloDialog\config\Hellodialog;
-use Czim\HelloDialog\Contracts\HelloDialogApiInterface;
-use Czim\HelloDialog\Enums\ApiType;
-use Czim\HelloDialog\Exceptions\ConnectionException;
+use Hellodialog\ApiWrapper\config\Hellodialog;
+use Hellodialog\ApiWrapper\Contracts\HelloDialogApiInterface;
+use Hellodialog\ApiWrapper\Enums\ApiType;
+use Hellodialog\ApiWrapper\Exceptions\ConnectionException;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;

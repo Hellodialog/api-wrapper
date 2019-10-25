@@ -8,7 +8,7 @@
  *
  */
 
-use Czim\HelloDialog\Handlers\TransactionalHandler;
+use Hellodialog\ApiWrapper\Handlers\TransactionalHandler;
 require_once('../vendor/autoload.php');
 require_once('../src/config/Hellodialog.php');
 

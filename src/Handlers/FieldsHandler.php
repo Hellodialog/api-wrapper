@@ -1,9 +1,9 @@
 <?php
-namespace Czim\HelloDialog\Handlers;
+namespace Hellodialog\ApiWrapper\Handlers;
 
-use Czim\HelloDialog\Contracts\fields\Field;
-use Czim\HelloDialog\Contracts\fields\FieldsInterface;
-use Czim\HelloDialog\HelloDialogHandler;
+use Hellodialog\ApiWrapper\Contracts\fields\Field;
+use Hellodialog\ApiWrapper\Contracts\fields\FieldsInterface;
+use Hellodialog\ApiWrapper\HelloDialogHandler;
 use Exception;
 
 class FieldsHandler extends HelloDialogHandler implements FieldsInterface

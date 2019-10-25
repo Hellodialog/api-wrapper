@@ -12,12 +12,12 @@ This is a php wrapper for connecting with the Hellodialog API V1
 Via Composer
 
 ``` bash
-$ composer require czim/hellodialog
+$ composer require hellodialog/api-wrapper
 ```
 
 Then add the service provider in `config/app.php`:
 
-    Czim\HelloDialog\HelloDialogServiceProvider::class,
+    Hellodialog\ApiWrapper\HelloDialogServiceProvider::class,
 
 Finally publish the config using the artisan command:
 
@@ -47,9 +47,9 @@ When using the mail driver, a transactional template is expected with at least a
 To manually perform calls, instantiate the `HelloDialogHandler` class.
 
 ```php
-    $handler = app(\Czim\HelloDialog\Contracts\HelloDialogHandlerInterface::class);
+    $handler = app(\Hellodialog\ApiWrapper\Contracts\HelloDialogHandlerInterface::class);
     // or:
-    $handler = new \Czim\HelloDialog\HelloDialogHandler();
+    $handler = new \Hellodialog\ApiWrapper\HelloDialogHandler();
 ```
 
 Available methods are listed [in the HelloDialogHandlerInterface](https://github.com/czim/hellodialog/blob/master/src/Contracts/HelloDialogHandlerInterface.php).

@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\HelloDialog\Contracts\contacts;
+namespace Hellodialog\ApiWrapper\Contracts\contacts;
 
-use Czim\HelloDialog\Enums\ContactType;
+use Hellodialog\ApiWrapper\Enums\ContactType;
 use Exception;
 
 interface ContactsInterface
