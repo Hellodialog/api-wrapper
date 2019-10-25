@@ -46,19 +46,22 @@ Available methods are listed in [GlobalHandler.php](https://github.com/Hellodial
 Templates can be referred to by numerical ID, or the key set for their section in the config (which *must* have an `id` property set).
 
 
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-
 ## Credits
 
 - [Bart Ros][link-author]
 - [Coen Zimmerman][link-org-author]
 
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
+
+[ico-version]: https://img.shields.io/packagist/v/czim/hellodialog.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/czim/hellodialog.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/czim/hellodialog
+[link-downloads]: https://packagist.org/packages/czim/hellodialog
 [link-org-author]: https://github.com/czim
 [link-author]: https://github.com/BRdev
