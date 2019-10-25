@@ -10,7 +10,7 @@
 
 use Czim\HelloDialog\Handlers\CampaignsHandler;
 require_once('vendor/autoload.php');
-array_merge(require_once('src/config/app.php'), require_once('src/config/hellodialog.php'));
+require_once('src/config/hellodialog.php');
 
 $campaignsHandler = new CampaignsHandler();
 

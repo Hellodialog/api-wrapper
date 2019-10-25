@@ -29,4 +29,10 @@ interface NewslettersInterface
      * @throws Exception
      */
     public function getNewsletters();
+
+    /**
+     * @param Newsletter $fields
+     * @return mixed
+     */
+    public function createNewsletter($fields);
 }

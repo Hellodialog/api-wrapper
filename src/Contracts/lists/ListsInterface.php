@@ -21,4 +21,10 @@ interface ListsInterface
      * @throws Exception
      */
     public function getLists();
+
+    /**
+     * @param Segment $fields
+     * @throws Exception
+     */
+    public function createList($fields);
 }

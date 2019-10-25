@@ -8,16 +8,37 @@
  *
  */
 
+use Czim\HelloDialog\Contracts\lists\Segment;
 use Czim\HelloDialog\Handlers\ListsHandler;
 require_once('vendor/autoload.php');
-array_merge(require_once('src/config/app.php'), require_once('src/config/hellodialog.php'));
+require_once('src/config/hellodialog.php');
 
 $listsHandler = new ListsHandler();
 
 // Get all lists
 try {
     $lists = $listsHandler->getLists();
-    print_r($lists);
+    //print_r($lists);
+} catch (Exception $e) {
+    print_r($e);
+}
+
+// Get a single list
+try {
+    $list = $listsHandler->getList(1);
+    //print_r($list);
+} catch (Exception $e) {
+    print_r($e);
+}
+
+// Post a list
+try {
+    $list = new Segment();
+    $list->name = 'Test Segment';
+    $list->description = 'A short description';
+    $list->contacts = [1];
+    //$result = $listsHandler->createList($list);
+    //print_r($result);
 } catch (Exception $e) {
     print_r($e);
 }

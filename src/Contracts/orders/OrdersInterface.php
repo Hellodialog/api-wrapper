@@ -19,4 +19,10 @@ interface OrdersInterface
      * @throws Exception
      */
     public function getOrder($orderId);
+
+    /**
+     * @param Order $fields
+     * @return array
+     */
+    public function createOrder($fields);
 }

@@ -2,6 +2,7 @@
 namespace Czim\HelloDialog\Handlers;
 
 use Czim\HelloDialog\Contracts\lists\ListsInterface;
+use Czim\HelloDialog\Contracts\lists\Segment;
 use Czim\HelloDialog\HelloDialogHandler;
 use Exception;
 use Log;
@@ -13,13 +14,15 @@ class ListsHandler extends HelloDialogHandler implements ListsInterface
     const API_LISTS      = 'lists';
 
     /**
-     * @param string|int $listId
      * @return array|object    List object
+     * @param string|int $listId
      * @throws Exception
      */
     public function getList($listId)
     {
-        // TODO: Implement getList() method.
+        $call = $this->getApiInstance(static::API_LISTS.'/'.$listId);
+
+        return $call->get() ?: [];
     }
 
     /**
@@ -31,5 +34,17 @@ class ListsHandler extends HelloDialogHandler implements ListsInterface
         $call = $this->getApiInstance(static::API_LISTS);
 
         return $call->get() ?: [];
+    }
+
+    /**
+     * @param Segment $fields
+     * @return array
+     * @throws Exception
+     */
+    public function createList($fields)
+    {
+        $call = $this->getApiInstance(static::API_LISTS)->data((array)$fields);
+
+        return $call->post() ?: [];
     }
 }

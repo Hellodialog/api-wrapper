@@ -19,7 +19,9 @@ class CampaignsHandler extends HelloDialogHandler implements CampaignsInterface
      */
     public function getCampaign($campaignId)
     {
-        // TODO: Implement getCampaign() method.
+        $call = $this->getApiInstance(static::API_CAMPAIGNS.'/'.$campaignId);
+
+        return $call->get() ?: [];
     }
 
     /**
@@ -33,4 +35,15 @@ class CampaignsHandler extends HelloDialogHandler implements CampaignsInterface
         return $call->get() ?: [];
     }
 
+    /**
+     * @param $fields
+     * @return array
+     * @throws Exception
+     */
+    public function createCampaign($fields)
+    {
+        $call = $this->getApiInstance(static::API_ORDERS)->data((array)$fields);
+
+        return $call->post() ?: [];
+    }
 }

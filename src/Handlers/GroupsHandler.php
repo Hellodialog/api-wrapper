@@ -1,12 +1,10 @@
 <?php
 namespace Czim\HelloDialog\Handlers;
 
+use Czim\HelloDialog\Contracts\groups\Group;
 use Czim\HelloDialog\Contracts\groups\GroupsInterface;
 use Czim\HelloDialog\HelloDialogHandler;
 use Exception;
-use Log;
-use Psr\Log\LoggerInterface;
-use UnexpectedValueException;
 
 class GroupsHandler extends HelloDialogHandler implements GroupsInterface
 {
@@ -22,13 +20,15 @@ class GroupsHandler extends HelloDialogHandler implements GroupsInterface
     }
 
     /**
-     * @param array $fields
-     * @return string|int   ID of generated group
+     * @param Group $fields
+     * @return array   array with ID of generated group
      * @throws Exception
      */
-    public function createGroup(array $fields)
+    public function createGroup($fields)
     {
-        // TODO: Implement createGroup() method.
+        $call = $this->getApiInstance(static::API_GROUPS)->data((array)$fields);
+
+        return $call->post() ?: [];
     }
 
     /**

@@ -8,16 +8,38 @@
  *
  */
 
+use Czim\HelloDialog\Contracts\groups\Group;
 use Czim\HelloDialog\Handlers\GroupsHandler;
 require_once('vendor/autoload.php');
-array_merge(require_once('src/config/app.php'), require_once('src/config/hellodialog.php'));
+require_once('src/config/hellodialog.php');
 
 $groupsHandler = new GroupsHandler();
 
-// Get account data
+// Get all groups
 try {
     $groups = $groupsHandler->getGroups();
-    print_r($groups);
+    //print_r($groups);
+} catch (Exception $e) {
+    print_r($e);
+}
+
+// Get a single group
+try {
+    $groups = $groupsHandler->getGroup(1);
+    //print_r($groups);
+} catch (Exception $e) {
+    print_r($e);
+}
+
+// Post a group
+try {
+    $group = new Group();
+    $group->name = 'Group for testing';
+    $group->visible_name = 'Test Group';
+    $group->description = 'A short description';
+    $group->is_private = false;
+    //$result = $groupsHandler->createGroup($group);
+    //print_r($result);
 } catch (Exception $e) {
     print_r($e);
 }

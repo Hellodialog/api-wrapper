@@ -1,12 +1,10 @@
 <?php
 namespace Czim\HelloDialog\Handlers;
 
+use Czim\HelloDialog\Contracts\orders\Order;
 use Czim\HelloDialog\Contracts\orders\OrdersInterface;
 use Czim\HelloDialog\HelloDialogHandler;
 use Exception;
-use Log;
-use Psr\Log\LoggerInterface;
-use UnexpectedValueException;
 
 class OrdersHandler extends HelloDialogHandler implements OrdersInterface
 {
@@ -36,4 +34,15 @@ class OrdersHandler extends HelloDialogHandler implements OrdersInterface
         return $call->get() ?: [];
     }
 
+    /**
+     * @param Order $fields
+     * @return array
+     * @throws Exception
+     */
+    public function createOrder($fields)
+    {
+        $call = $this->getApiInstance(static::API_ORDERS)->data((array)$fields);
+
+        return $call->post() ?: [];
+    }
 }

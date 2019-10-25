@@ -15,11 +15,11 @@ interface ContactsInterface
     public function saveContact(array $fields, $state = ContactType::OPT_IN);
 
     /**
-     * @param array $fields
-     * @return string|int   ID of generated contact
+     * @param Contact $fields
+     * @return array   array with ID of generated contact
      * @throws Exception
      */
-    public function createContact(array $fields);
+    public function createContact($fields);
 
     /**
      * @param string|int $contactId

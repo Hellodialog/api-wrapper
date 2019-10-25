@@ -1,6 +1,7 @@
 <?php
 namespace Czim\HelloDialog\Handlers;
 
+use Czim\HelloDialog\Contracts\newsletters\Newsletter;
 use Czim\HelloDialog\Contracts\newsletters\NewslettersInterface;
 use Czim\HelloDialog\HelloDialogHandler;
 use Exception;
@@ -41,7 +42,9 @@ class NewslettersHandler extends HelloDialogHandler implements NewslettersInterf
      */
     public function getNewsletter($newsletterId)
     {
-        // TODO: Implement getNewsletter() method.
+        $call = $this->getApiInstance(static::API_NEWSLETTERS.'/'.$newsletterId);
+
+        return $call->get() ?: [];
     }
 
     /**
@@ -53,5 +56,17 @@ class NewslettersHandler extends HelloDialogHandler implements NewslettersInterf
         $call = $this->getApiInstance(static::API_NEWSLETTERS);
 
         return $call->get() ?: [];
+    }
+
+    /**
+     * @param Newsletter $fields
+     * @return mixed
+     * @throws Exception
+     */
+    public function createNewsletter($fields)
+    {
+        $call = $this->getApiInstance(static::API_NEWSLETTERS)->data((array)$fields);
+
+        return $call->post() ?: [];
     }
 }

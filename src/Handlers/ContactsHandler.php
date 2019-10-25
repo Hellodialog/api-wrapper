@@ -1,6 +1,7 @@
 <?php
 namespace Czim\HelloDialog\Handlers;
 
+use Czim\HelloDialog\Contracts\contacts\Contact;
 use Czim\HelloDialog\Contracts\contacts\ContactsInterface;
 use Czim\HelloDialog\Enums\ContactType;
 use Czim\HelloDialog\HelloDialogHandler;
@@ -41,14 +42,14 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
             try {
                 $contactId = $this->createContact($fields);
 
-                if (config('hellodialog.debug')) {
+                /*if (config('hellodialog.debug')) {
                     $this->log('createContact', 'debug', [
                         'contactId' => $contactId,
                         'state'     => $state,
                         'data'      => $fields,
                         'new'       => true,
                     ]);
-                }
+                }*/
 
             } catch (Exception $e) {
                 $this->logException($e);
@@ -77,13 +78,13 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
         try {
             $contact = $this->updateContact($contactId, $fields);
 
-            if (config('hellodialog.debug')) {
+            /*if (config('hellodialog.debug')) {
                 $this->log('createContact', 'debug', [
                     'state'   => $state,
                     'data'    => $fields,
                     'contact' => $contact,
                 ]);
-            }
+            }*/
 
         } catch (Exception $e) {
 
@@ -95,26 +96,26 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
     }
 
     /**
-     * @param array $fields
-     * @return string|int   ID of generated contact
+     * @param Contact $fields
+     * @return array   array ID of generated contact
      * @throws Exception
      */
-    public function createContact(array $fields)
+    public function createContact($fields)
     {
         $result = $this->getApiInstance(static::API_CONTACTS)
-            ->data($fields)
+            ->data((array)$fields)
             ->post();
 
         $this->checkForHelloDialogError($result);
 
-        if (config('hellodialog.debug')) {
+        /*if (config('hellodialog.debug')) {
             $this->log('createContact', 'debug', [
                 'data'   => $fields,
                 'result' => $result,
             ]);
-        }
+        }*/
 
-        return array_get($result, 'result.data.id');
+        return $result ?: [];
     }
 
     /**
@@ -131,13 +132,13 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
 
         $this->checkForHelloDialogError($result);
 
-        if (config('hellodialog.debug')) {
+        /*if (config('hellodialog.debug')) {
             $this->log('updateContact', 'debug', [
                 'contactId' => $contactId,
                 'data'      => $fields,
                 'result'    => $result,
             ]);
-        }
+        }*/
 
         return array_get($result, 'result.data.id');
     }

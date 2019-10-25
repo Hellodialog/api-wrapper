@@ -1,12 +1,10 @@
 <?php
 namespace Czim\HelloDialog\Handlers;
 
+use Czim\HelloDialog\Contracts\fields\Field;
 use Czim\HelloDialog\Contracts\fields\FieldsInterface;
 use Czim\HelloDialog\HelloDialogHandler;
 use Exception;
-use Log;
-use Psr\Log\LoggerInterface;
-use UnexpectedValueException;
 
 class FieldsHandler extends HelloDialogHandler implements FieldsInterface
 {
@@ -21,5 +19,29 @@ class FieldsHandler extends HelloDialogHandler implements FieldsInterface
         $call = $this->getApiInstance(static::API_FIELDS);
 
         return $call->get() ?: [];
+    }
+
+    /**
+     * @param $fieldId
+     * @return array|object
+     * @throws Exception
+     */
+    public function getField($fieldId)
+    {
+        $call = $this->getApiInstance(static::API_FIELDS.'/'.$fieldId);
+
+        return $call->get() ?: [];
+    }
+
+    /**
+     * @param Field $fields
+     * @return array|object
+     * @throws Exception
+     */
+    public function createField($fields)
+    {
+        $call = $this->getApiInstance(static::API_FIELDS)->data((array)$fields);
+
+        return $call->post() ?: [];
     }
 }

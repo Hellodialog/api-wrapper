@@ -13,11 +13,11 @@ interface GroupsInterface
     public function saveGroup(array $fields);
 
     /**
-     * @param array $fields
-     * @return string|int   ID of generated group
+     * @param Group $fields
+     * @return array   array with ID of generated group
      * @throws Exception
      */
-    public function createGroup(array $fields);
+    public function createGroup($fields);
 
     /**
      * @param string|int $groupId

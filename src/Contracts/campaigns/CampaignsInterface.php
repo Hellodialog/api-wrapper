@@ -20,4 +20,11 @@ interface CampaignsInterface
      * @throws Exception
      */
     public function getCampaigns();
+
+    /**
+     * @param $fields
+     * @return array
+     * @throws Exception
+     */
+    public function createCampaign($fields);
 }
