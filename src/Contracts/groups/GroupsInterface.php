@@ -40,4 +40,16 @@ interface GroupsInterface
      */
     public function getGroups();
 
+    /**
+     * @param string|int    $extGroupId
+     * @return array|object    Group object
+     * @throws Exception
+     */
+    public function getExternalGroup($extGroupId);
+
+    /**
+     * @return array|object    Groups array
+     * @throws Exception
+     */
+    public function getExternalGroups();
 }

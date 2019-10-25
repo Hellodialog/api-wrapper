@@ -9,6 +9,7 @@ use Exception;
 class GroupsHandler extends HelloDialogHandler implements GroupsInterface
 {
     const API_GROUPS    = 'groups';
+    const API_EXT_GROUPS= 'groups/external';
 
     /**
      * @param array $fields
@@ -49,7 +50,9 @@ class GroupsHandler extends HelloDialogHandler implements GroupsInterface
      */
     public function getGroup($groupId)
     {
-        // TODO: Implement getGroup() method.
+        $call = $this->getApiInstance(static::API_GROUPS.'/'.$groupId);
+
+        return $call->get() ?: [];
     }
 
     /**
@@ -59,6 +62,29 @@ class GroupsHandler extends HelloDialogHandler implements GroupsInterface
     public function getGroups()
     {
         $call = $this->getApiInstance(static::API_GROUPS);
+
+        return $call->get() ?: [];
+    }
+
+    /**
+     * @param string|int $extGroupId
+     * @return array|object    Group object
+     * @throws Exception
+     */
+    public function getExternalGroup($extGroupId)
+    {
+        $call = $this->getApiInstance(static::API_EXT_GROUPS.'/'.$extGroupId);
+
+        return $call->get() ?: [];
+    }
+
+    /**
+     * @return array|object    Groups array
+     * @throws Exception
+     */
+    public function getExternalGroups()
+    {
+        $call = $this->getApiInstance(static::API_EXT_GROUPS);
 
         return $call->get() ?: [];
     }

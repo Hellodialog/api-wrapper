@@ -61,3 +61,15 @@ try {
 } catch (Exception $e) {
     print_r($e);
 }
+
+// Post a contact with an external group id
+try {
+    $contact = new Contact();
+    $contact->email = 'test+'.mt_rand(0, 100).'@hellodialog.com';
+    $contact->external_group_ids = [1];
+    $contact->_state = 'Contact';
+    $result = $contactsHandler->createExternalContact($contact);
+    //print_r($result);
+} catch (Exception $e) {
+    print_r($e);
+}

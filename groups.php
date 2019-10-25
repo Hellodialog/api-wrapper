@@ -31,6 +31,14 @@ try {
     print_r($e);
 }
 
+// Get a single external group
+try {
+    $extGroups = $groupsHandler->getExternalGroup("20190624044140444");
+    //print_r($extGroups);
+} catch (Exception $e) {
+    print_r($e);
+}
+
 // Post a group
 try {
     $group = new Group();
@@ -38,6 +46,20 @@ try {
     $group->visible_name = 'Test Group';
     $group->description = 'A short description';
     $group->is_private = false;
+    //$result = $groupsHandler->createGroup($group);
+    //print_r($result);
+} catch (Exception $e) {
+    print_r($e);
+}
+
+// Post an external group
+try {
+    $group = new Group();
+    $group->name = 'External Group for testing';
+    $group->visible_name = 'Test Ext. Group';
+    $group->description = 'A short description for this external group';
+    $group->is_private = false;
+    $group->external_id = "20190624044140359";
     //$result = $groupsHandler->createGroup($group);
     //print_r($result);
 } catch (Exception $e) {

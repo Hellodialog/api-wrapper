@@ -13,6 +13,7 @@ use UnexpectedValueException;
 class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
 
     const API_CONTACTS      = 'contacts';
+    const API_EXT_CONTACTS      = 'contacts/external_groups';
 
     /**
      * Creates or updates contact and returns contact ID if successful.
@@ -144,10 +145,11 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
     }
 
     /**
-     * @param string               $email
-     * @param string|string[]|null $type            _state or list of states
-     * @param bool                 $excludeType     if true and type set, only matches where type does NOT match (any)
+     * @param string $email
+     * @param string|string[]|null $type _state or list of states
+     * @param bool $excludeType if true and type set, only matches where type does NOT match (any)
      * @return array|false
+     * @throws Exception
      */
     public function getContactByEmail($email, $type = null, $excludeType = false)
     {
@@ -161,10 +163,11 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
     }
 
     /**
-     * @param string               $email
-     * @param string|string[]|null $type            _state or list of states
-     * @param bool                 $excludeType     if true and type set, only matches where type does NOT match (any)
+     * @param string $email
+     * @param string|string[]|null $type _state or list of states
+     * @param bool $excludeType if true and type set, only matches where type does NOT match (any)
      * @return array
+     * @throws Exception
      */
     public function getContactsByEmail($email, $type = null, $excludeType = false)
     {
@@ -202,6 +205,7 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
 
     /**
      * @return array
+     * @throws Exception
      */
     public function getContacts()
     {
@@ -213,13 +217,30 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
     }
 
     /**
-     * @param string          $email
-     * @param string|string[] $type         _state or list of states
-     * @param bool            $excludeType  if true and type set, only matches where type does NOT match (any)
+     * @param string $email
+     * @param string|string[] $type _state or list of states
+     * @param bool $excludeType if true and type set, only matches where type does NOT match (any)
      * @return bool
+     * @throws Exception
      */
     public function checkIfEmailExists($email, $type = null, $excludeType = false)
     {
         return (bool) $this->getContactByEmail($email, $type, $excludeType);
+    }
+
+    /**
+     * @param Contact $fields
+     * @return array   array with ID of generated contact
+     * @throws Exception
+     */
+    public function createExternalContact($fields)
+    {
+        $result = $this->getApiInstance(static::API_EXT_CONTACTS)
+            ->data((array)$fields)
+            ->post();
+
+        $this->checkForHelloDialogError($result);
+
+        return $result ?: [];
     }
 }

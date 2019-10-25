@@ -11,4 +11,5 @@ class Group {
     public $visible_name;
     public $is_private;
     public $description;
+    public $external_id;
 }

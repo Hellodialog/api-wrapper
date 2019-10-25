@@ -22,6 +22,13 @@ interface ContactsInterface
     public function createContact($fields);
 
     /**
+     * @param Contact $fields
+     * @return array   array with ID of generated contact
+     * @throws Exception
+     */
+    public function createExternalContact($fields);
+
+    /**
      * @param string|int $contactId
      * @param array      $fields
      * @return string|int  ID of updated contact

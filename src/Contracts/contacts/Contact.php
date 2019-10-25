@@ -33,6 +33,11 @@ class Contact {
     public $groups;
 
     /*
+     * External Groups
+     */
+    public $external_group_ids;
+
+    /*
      * State
      */
     public $_state;
