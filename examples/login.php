@@ -9,8 +9,8 @@
  */
 
 use Czim\HelloDialog\Handlers\LoginHandler;
-require_once('vendor/autoload.php');
-require_once('src/config/hellodialog.php');
+require_once('../vendor/autoload.php');
+require_once('../src/config/Hellodialog.php');
 
 $loginHandler = new LoginHandler();
 

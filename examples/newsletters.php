@@ -10,8 +10,8 @@
 
 use Czim\HelloDialog\Contracts\newsletters\Newsletter;
 use Czim\HelloDialog\Handlers\NewslettersHandler;
-require_once('vendor/autoload.php');
-require_once('src/config/hellodialog.php');
+require_once('../vendor/autoload.php');
+require_once('../src/config/Hellodialog.php');
 
 $newslettersHandler = new NewslettersHandler();
 

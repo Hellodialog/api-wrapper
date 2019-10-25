@@ -10,8 +10,8 @@
 
 use Czim\HelloDialog\Contracts\fields\Field;
 use Czim\HelloDialog\Handlers\FieldsHandler;
-require_once('vendor/autoload.php');
-require_once('src/config/hellodialog.php');
+require_once('../vendor/autoload.php');
+require_once('../src/config/Hellodialog.php');
 
 $fieldsHandler = new FieldsHandler();
 

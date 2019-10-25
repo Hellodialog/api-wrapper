@@ -11,7 +11,7 @@
 use Czim\HelloDialog\Contracts\contacts\Contact;
 use Czim\HelloDialog\Handlers\ContactsHandler;
 require_once('vendor/autoload.php');
-require_once('src/config/hellodialog.php');
+require_once('src/config/Hellodialog.php');
 
 $contactsHandler = new ContactsHandler();
 

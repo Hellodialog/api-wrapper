@@ -1,6 +1,7 @@
 <?php
 namespace Czim\HelloDialog;
 
+use Czim\HelloDialog\config\Hellodialog;
 use Czim\HelloDialog\Contracts\HelloDialogApiInterface;
 use Czim\HelloDialog\Enums\ApiType;
 use Czim\HelloDialog\Exceptions\ConnectionException;
@@ -19,6 +20,8 @@ use Psr\Log\LoggerInterface;
  */
 class HelloDialogApi implements HelloDialogApiInterface
 {
+
+    protected $hdSettings;
 
     /**
      * @var LoggerInterface
@@ -96,10 +99,26 @@ class HelloDialogApi implements HelloDialogApiInterface
     public function __construct(LoggerInterface $logger = null)
     {
         $this->logger = $logger ?: app('log');
-
+        $this->hdSettings = new Hellodialog();
         $this->path  = ApiType::TRANSACTIONAL;
-        $this->token = '4e46a7efbb376aabc657cfb16490c02b';//config('hellodialog.token');
-        $this->url   = 'http://app.dev.hellodialog.com/api';//config('hellodialog.url');
+        $this->token = $this->hdSettings->getToken();
+        $this->url   = $this->hdSettings->getUrl();
+    }
+
+    /**
+     * @return Hellodialog
+     */
+    public function getHdSettings()
+    {
+        return $this->hdSettings;
+    }
+
+    /**
+     * @param Hellodialog $hdSettings
+     */
+    public function setHdSettings($hdSettings)
+    {
+        $this->hdSettings = $hdSettings;
     }
 
     /**

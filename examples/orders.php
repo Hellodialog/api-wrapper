@@ -11,8 +11,8 @@
 use Czim\HelloDialog\Contracts\orders\Order;
 use Czim\HelloDialog\Contracts\orders\Product;
 use Czim\HelloDialog\Handlers\OrdersHandler;
-require_once('vendor/autoload.php');
-require_once('src/config/hellodialog.php');
+require_once('../vendor/autoload.php');
+require_once('../src/config/Hellodialog.php');
 
 $ordersHandler = new OrdersHandler();
 
@@ -38,7 +38,7 @@ try {
 
     $order = new Order();
     $order->contact = 3;
-    $order->order_number = '1';
+    $order->order_number = '2';
     $order->created_on = 1571992388;
     $order->price = 49.99;
     $order->payment_method = 'PAYPAL';

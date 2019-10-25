@@ -1,6 +1,7 @@
 <?php
 namespace Czim\HelloDialog\Handlers;
 
+use Czim\HelloDialog\config\Hellodialog;
 use Czim\HelloDialog\Contracts\transactional\TransactionalInterface;
 use Czim\HelloDialog\Enums\ContactType;
 use Czim\HelloDialog\Exceptions\HelloDialogErrorException;
@@ -28,9 +29,12 @@ class TransactionalHandler extends HelloDialogHandler implements TransactionalIn
      */
     public function transactional($to, $subject, $template = null, array $from = null, array $replaces = [], $replyToMail = null)
     {
-        $from = $from ?: 'info@hellodialog.com';//config('hellodialog.sender');
+        $hdSettings = new Hellodialog();
+        $sender = $hdSettings->getSender();
 
-        $template = $template ?: 'transactional';//config('hellodialog.default_template');
+        $from = $from ?: $sender['email'];
+
+        $template = $template ?: $hdSettings->getDefaultTemplate();
         $template = $this->normalizeTemplate($template);
 
         // Build normalized replaces array

@@ -10,8 +10,8 @@
 
 use Czim\HelloDialog\Contracts\lists\Segment;
 use Czim\HelloDialog\Handlers\ListsHandler;
-require_once('vendor/autoload.php');
-require_once('src/config/hellodialog.php');
+require_once('../vendor/autoload.php');
+require_once('../src/config/Hellodialog.php');
 
 $listsHandler = new ListsHandler();
 

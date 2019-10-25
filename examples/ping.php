@@ -9,8 +9,8 @@
  */
 
 use Czim\HelloDialog\Handlers\PingHandler;
-require_once('vendor/autoload.php');
-require_once('src/config/hellodialog.php');
+require_once('../vendor/autoload.php');
+require_once('../src/config/Hellodialog.php');
 
 $pingHandler = new PingHandler();
 

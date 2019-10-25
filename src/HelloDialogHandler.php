@@ -26,7 +26,6 @@ class HelloDialogHandler implements
      */
     protected $apiInstances = [];
 
-
     /**
      * @param LoggerInterface|null $logger
      */

@@ -10,8 +10,8 @@
 
 use Czim\HelloDialog\Contracts\groups\Group;
 use Czim\HelloDialog\Handlers\GroupsHandler;
-require_once('vendor/autoload.php');
-require_once('src/config/hellodialog.php');
+require_once('../vendor/autoload.php');
+require_once('../src/config/Hellodialog.php');
 
 $groupsHandler = new GroupsHandler();
 

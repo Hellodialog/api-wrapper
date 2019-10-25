@@ -9,8 +9,8 @@
  */
 
 use Czim\HelloDialog\Handlers\GlobalHandler;
-require_once('vendor/autoload.php');
-require_once('src/config/hellodialog.php');
+require_once('../vendor/autoload.php');
+require_once('../src/config/Hellodialog.php');
 
 $globalHandler = new GlobalHandler();
 
