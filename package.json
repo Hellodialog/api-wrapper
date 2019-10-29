@@ -1,5 +1,5 @@
 {
-  "name": "api-wrapper",
+  "name": "@hellodialog/api-wrapper",
   "version": "1.0.0",
   "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "dependencies": {
