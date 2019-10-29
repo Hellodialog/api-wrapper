@@ -27,4 +27,23 @@ interface ListsInterface
      * @throws Exception
      */
     public function createList($fields);
+
+    /**
+     * @param $listId
+     * @param Segment $fields
+     * @throws Exception
+     */
+    public function updateList($listId, $fields);
+
+    /**
+     * @param $listId
+     * @return mixed
+     */
+    public function deleteList($listId);
+
+    /**
+     * @param $listId
+     * @return mixed
+     */
+    public function listCampaigns($listId);
 }

@@ -44,4 +44,22 @@ class FieldsHandler extends HelloDialogHandler implements FieldsInterface
 
         return $call->post() ?: [];
     }
+
+    /**
+     * @param $fieldId
+     * @param $fields
+     * @return mixed
+     * @throws Exception
+     */
+    public function updateField($fieldId, $fields)
+    {
+        $call = $this->getApiInstance(static::API_FIELDS)->data((array)$fields);
+        return $call->put($fieldId);
+    }
+
+    public function deleteField($fieldId)
+    {
+        $call = $this->getApiInstance(static::API_FIELDS);
+        return $call->delete($fieldId);
+    }
 }

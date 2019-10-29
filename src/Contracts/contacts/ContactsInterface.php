@@ -37,6 +37,20 @@ interface ContactsInterface
     public function updateContact($contactId, array $fields);
 
     /**
+     * @param array      $contacts
+     * @return string|int  ID of updated contact
+     * @throws Exception
+     */
+    public function updateContacts(array $contacts);
+
+    /**
+     * @param $contactId
+     * @return mixed
+     * @throws Exception
+     */
+    public function deleteContact($contactId);
+
+    /**
      * @param string               $email
      * @param string|string[]|null $type            _state value, ContactType enum or list of
      * @param bool                 $excludeType     if true and type set, only matches where type does NOT match (any)
@@ -59,6 +73,13 @@ interface ContactsInterface
      * @return array
      */
     public function getContactsByEmail($email, $type = null, $excludeType = false);
+
+    /**
+     * @param $parameters
+     * @param int $page
+     * @return array
+     */
+    public function getContactsByParameters($parameters, $page = 0);
 
     /**
      * @return array

@@ -16,9 +16,11 @@ class NewslettersHandler extends HelloDialogHandler implements NewslettersInterf
     /**
      * Fetches the contents of a template, optionally performing placeholder replaces.
      *
-     * @param int   $templateId
+     * @param int $templateId
      * @param array $replaces
      * @return string
+     * @throws \Hellodialog\ApiWrapper\Exceptions\HelloDialogErrorException
+     * @throws \Hellodialog\ApiWrapper\Exceptions\HelloDialogGeneralException
      */
     public function getTemplateContents($templateId, array $replaces = [])
     {
@@ -68,5 +70,30 @@ class NewslettersHandler extends HelloDialogHandler implements NewslettersInterf
         $call = $this->getApiInstance(static::API_NEWSLETTERS)->data((array)$fields);
 
         return $call->post() ?: [];
+    }
+
+    /**
+     * @param $newsletterId
+     * @param Newsletter $fields
+     * @return mixed
+     * @throws Exception
+     */
+    public function updateNewsletter($newsletterId, $fields)
+    {
+        $call = $this->getApiInstance(static::API_NEWSLETTERS)->data((array)$fields);
+
+        return $call->put($newsletterId) ?: [];
+    }
+
+    /**
+     * @param $newsletterId
+     * @return mixed
+     * @throws Exception
+     */
+    public function deleteNewsletter($newsletterId)
+    {
+        $call = $this->getApiInstance(static::API_NEWSLETTERS);
+
+        return $call->delete($newsletterId);
     }
 }

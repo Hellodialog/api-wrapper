@@ -43,3 +43,24 @@ try {
 } catch (Exception $e) {
     print_r($e);
 }
+
+// Update a newsletter
+try {
+    $newsletter = new Newsletter();
+    $newsletter->name = 'Test newsletter';
+    $newsletter->subject = 'My test subject';
+    $newsletter->html = '<html><h2>Test Heading</h2></html>';
+
+    $newsletter = $newslettersHandler->updateNewsletter(1, $newsletter);
+    print_r($newsletter);
+} catch (Exception $e) {
+    print_r($e);
+}
+
+// Delete a newsletter
+try {
+    $result = $newslettersHandler->deleteNewsletter(1);
+    print_r($result);
+} catch (Exception $e) {
+    print_r($e);
+}

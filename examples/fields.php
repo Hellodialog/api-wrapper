@@ -52,3 +52,24 @@ try {
 } catch (Exception $e) {
     print_r($e);
 }
+
+// Update a field
+try {
+    $fields = [
+        'removable' => 1,
+        'user_viewable' => 1,
+        'user_editable' => 1
+    ];
+    $updatedField = $fieldsHandler->updateField(1, $fields);
+    print_r($updatedField);
+} catch (Exception $e) {
+    print_r($e);
+}
+
+// Delete a field
+try {
+    $deleteField = $fieldsHandler->deleteField(1);
+    print_r($deleteField);
+} catch (Exception $e) {
+    print_r($e);
+}

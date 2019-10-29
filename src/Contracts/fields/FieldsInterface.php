@@ -22,4 +22,17 @@ interface FieldsInterface
      * @return mixed
      */
     public function createField($fields);
+
+    /**
+     * @param $fieldId
+     * @param $fields
+     * @return mixed
+     */
+    public function updateField($fieldId, $fields);
+
+    /**
+     * @param $fieldId
+     * @return mixed
+     */
+    public function deleteField($fieldId);
 }

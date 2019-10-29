@@ -20,6 +20,13 @@ interface HelloDialogApiInterface
     public function data(array $data);
 
     /**
+     * @param $key
+     * @param mixed $value
+     * @return mixed
+     */
+    public function parameter($key, $value = false);
+
+    /**
      * Sets a key value pair with a given condition
      *
      * @param string $key
@@ -29,6 +36,14 @@ interface HelloDialogApiInterface
      * @throws Exception
      */
     public function condition($key, $value, $condition = 'equals');
+
+    /**
+     * Sets a page for 100 results per page
+     *
+     * @param $page
+     * @return mixed
+     */
+    public function page($page);
 
     /**
      * Perfoms a request for the PUT method

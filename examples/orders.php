@@ -24,6 +24,15 @@ try {
     print_r($e);
 }
 
+// Get order data from order number or get orders count
+try {
+    $parameter = ['count' => true];
+    $orders = $ordersHandler->getOrderWithParameters($parameter);
+    print_r($orders);
+} catch (Exception $e) {
+    print_r($e);
+}
+
 // Post an order
 try {
     $product = new Product();
@@ -53,8 +62,38 @@ try {
         $product
     ];
 
-    $order = $ordersHandler->createOrder($order);
-    print_r($order);
+    //$order = $ordersHandler->createOrder($order);
+    //print_r($order);
+} catch (Exception $e) {
+    print_r($e);
+}
+
+// Update multiple orders status
+try {
+    $orders = [
+        [ 'id' => 1, 'payment_status' => 'PAID'], // "PAID" "ERROR" "REFUND" "CANCELLED" "PENDING" "DENIED"
+        [ 'id' => 2, 'payment_status' => 'ERROR'], // "PAID" "ERROR" "REFUND" "CANCELLED" "PENDING" "DENIED"
+    ];
+
+    //$ordersStatusUpdate = $ordersHandler->updateOrdersStatus($orders);
+    //print_r($ordersStatusUpdate);
+} catch (Exception $e) {
+    print_r($e);
+}
+
+
+// Update single order status
+try {
+    //$orderStatusUpdate = $ordersHandler->updateOrderStatus(1, 'PAID');
+    //print_r($orderStatusUpdate);
+} catch (Exception $e) {
+    print_r($e);
+}
+
+// Delete an order
+try {
+    //$orderDelete = $ordersHandler->deleteOrder(1);
+    //print_r($orderDelete);
 } catch (Exception $e) {
     print_r($e);
 }

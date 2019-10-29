@@ -28,6 +28,12 @@ interface GroupsInterface
     public function updateGroup($groupId, array $fields);
 
     /**
+     * @param $groupId
+     * @return mixed
+     */
+    public function deleteGroup($groupId);
+
+    /**
      * @param string|int    $groupId
      * @return array|object    Group object
      * @throws Exception

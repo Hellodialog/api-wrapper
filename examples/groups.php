@@ -65,3 +65,24 @@ try {
 } catch (Exception $e) {
     print_r($e);
 }
+
+// Update a group
+try {
+    $group = new Group();
+    $group->name = 'Update group for testing';
+    $group->visible_name = 'Updated Group';
+    $group->description = 'A short updated description';
+    $group->is_private = true;
+    //$result = $groupsHandler->updateGroup(1, (array)$group);
+    //print_r($result);
+} catch (Exception $e) {
+    print_r($e);
+}
+
+// Delete a group
+try {
+    //$result = $groupsHandler->deleteGroup(1);
+    //print_r($result);
+} catch (Exception $e) {
+    print_r($e);
+}

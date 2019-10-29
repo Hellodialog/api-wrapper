@@ -47,4 +47,41 @@ class ListsHandler extends HelloDialogHandler implements ListsInterface
 
         return $call->post() ?: [];
     }
+
+    /**
+     * @param $listId
+     * @param Segment $fields
+     * @return array
+     * @throws Exception
+     */
+    public function updateList($listId, $fields)
+    {
+        $call = $this->getApiInstance(static::API_LISTS)->data((array)$fields);
+
+        return $call->put($listId) ?: [];
+    }
+
+    /**
+     * @param $listId
+     * @return mixed
+     * @throws Exception
+     */
+    public function deleteList($listId)
+    {
+        $call = $this->getApiInstance(static::API_LISTS);
+
+        return $call->delete($listId) ?: [];
+    }
+
+    /**
+     * @param $listId
+     * @return mixed
+     * @throws Exception
+     */
+    public function listCampaigns($listId)
+    {
+        $call = $this->getApiInstance(static::API_LISTS.'/'.$listId.'/campaigns');
+
+        return $call->get() ?: [];
+    }
 }

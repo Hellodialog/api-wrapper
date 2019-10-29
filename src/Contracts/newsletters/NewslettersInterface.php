@@ -35,4 +35,17 @@ interface NewslettersInterface
      * @return mixed
      */
     public function createNewsletter($fields);
+
+    /**
+     * @param $newsletterId
+     * @param $fields
+     * @return mixed
+     */
+    public function updateNewsletter($newsletterId, $fields);
+
+    /**
+     * @param $newsletterId
+     * @return mixed
+     */
+    public function deleteNewsletter($newsletterId);
 }

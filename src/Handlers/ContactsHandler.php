@@ -111,6 +111,23 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
     }
 
     /**
+     * @param array $contacts
+     * @return mixed
+     * @throws Exception
+     */
+    public function updateContacts(array $contacts)
+    {
+
+        $result = $this->getApiInstance(static::API_CONTACTS)
+            ->data((array)$contacts)
+            ->put();
+
+        $this->checkForHelloDialogError($result);
+
+        return $result ?: [];
+    }
+
+    /**
      * @param string $email
      * @param string|string[]|null $type _state or list of states
      * @param bool $excludeType if true and type set, only matches where type does NOT match (any)
@@ -183,6 +200,29 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
     }
 
     /**
+     * @param $parameters
+     * @param int $page
+     * @return array
+     * @throws Exception
+     */
+    public function getContactsByParameters($parameters, $page = 0)
+    {
+        $call = $this->getApiInstance(static::API_CONTACTS);
+        if($parameters){
+            foreach ($parameters as $parameter){
+                $call->condition($parameter['key'], $parameter['value'], $parameter['condition']);
+            }
+        }
+
+        if($page > 0){
+            $call->page($page);
+        }
+        $contacts = $call->get();
+
+        return $contacts ?: [];
+    }
+
+    /**
      * @param string $email
      * @param string|string[] $type _state or list of states
      * @param bool $excludeType if true and type set, only matches where type does NOT match (any)
@@ -204,6 +244,21 @@ class ContactsHandler extends HelloDialogHandler implements ContactsInterface {
         $result = $this->getApiInstance(static::API_EXT_CONTACTS)
             ->data((array)$fields)
             ->post();
+
+        $this->checkForHelloDialogError($result);
+
+        return $result ?: [];
+    }
+
+    /**
+     * @param $contactId
+     * @return mixed
+     * @throws Exception
+     */
+    public function deleteContact($contactId)
+    {
+        $result = $this->getApiInstance(static::API_CONTACTS)
+            ->delete($contactId);
 
         $this->checkForHelloDialogError($result);
 

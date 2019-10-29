@@ -35,12 +35,14 @@ class GroupsHandler extends HelloDialogHandler implements GroupsInterface
     /**
      * @param string|int $groupId
      * @param array $fields
-     * @return string|int  ID of updated group
+     * @return array   array with ID of generated group
      * @throws Exception
      */
     public function updateGroup($groupId, array $fields)
     {
-        // TODO: Implement updateGroup() method.
+        $call = $this->getApiInstance(static::API_GROUPS)->data((array)$fields);
+
+        return $call->put($groupId) ?: [];
     }
 
     /**
@@ -87,5 +89,17 @@ class GroupsHandler extends HelloDialogHandler implements GroupsInterface
         $call = $this->getApiInstance(static::API_EXT_GROUPS);
 
         return $call->get() ?: [];
+    }
+
+    /**
+     * @param $groupId
+     * @return mixed
+     * @throws Exception
+     */
+    public function deleteGroup($groupId)
+    {
+        $call = $this->getApiInstance(static::API_GROUPS);
+
+        return $call->delete($groupId) ?: [];
     }
 }

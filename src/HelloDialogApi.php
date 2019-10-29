@@ -57,6 +57,16 @@ class HelloDialogApi implements HelloDialogApiInterface
     /**
      * @var array
      */
+    protected $parameter = [];
+
+    /**
+     * @var integer
+     */
+    protected $page = 0;
+
+    /**
+     * @var array
+     */
     protected $data = [];
 
     /**
@@ -217,7 +227,9 @@ class HelloDialogApi implements HelloDialogApiInterface
      *
      * @param string $id
      * @return mixed
-     * @throws Exception
+     * @throws ConnectionException
+     * @throws Exceptions\HelloDialogErrorException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function put($id = null)
     {
@@ -229,7 +241,9 @@ class HelloDialogApi implements HelloDialogApiInterface
      *
      * @param string $id
      * @return mixed
-     * @throws Exception
+     * @throws ConnectionException
+     * @throws Exceptions\HelloDialogErrorException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function delete($id)
     {
@@ -241,7 +255,9 @@ class HelloDialogApi implements HelloDialogApiInterface
      *
      * @param string $id
      * @return mixed
-     * @throws Exception
+     * @throws ConnectionException
+     * @throws Exceptions\HelloDialogErrorException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($id = null)
     {
@@ -252,7 +268,9 @@ class HelloDialogApi implements HelloDialogApiInterface
      * Performs a request for the POST method
      *
      * @return mixed
-     * @throws Exception
+     * @throws ConnectionException
+     * @throws Exceptions\HelloDialogErrorException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function post()
     {
@@ -265,7 +283,9 @@ class HelloDialogApi implements HelloDialogApiInterface
      * @param string $method
      * @param string $id
      * @return mixed
-     * @throws Exception
+     * @throws ConnectionException
+     * @throws Exceptions\HelloDialogErrorException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     protected function request($method, $id = null)
     {
@@ -350,13 +370,27 @@ class HelloDialogApi implements HelloDialogApiInterface
             'token' => $this->token,
         ];
 
+        if(isset($this->parameter) && !empty($this->parameter)) {
+            foreach ($this->parameter as $key => $value) {
+                if(is_array($value)){
+                    foreach ($value as $filter => $option) {
+                        $requestParameters[$filter] = $option;
+                    }
+                }
+            }
+        }
+
         foreach ($this->conditions as $key => $data) {
             $requestParameters[ 'condition[' . $key . ']' ] = $data['condition'];
             $requestParameters[ 'values[' . $key . ']' ]    = $data['value'];
         }
 
-        $options['query'] = $requestParameters;
+        $page = $this->page();
+        if($page !== false && is_array($page)) {
+            $requestParameters['page'] = $page['page'];
+        }
 
+        $options['query'] = $requestParameters;
         return $options;
     }
 
@@ -422,4 +456,32 @@ class HelloDialogApi implements HelloDialogApiInterface
         return app(Client::class);
     }
 
+    /**
+     * Sets a page for 100 results per page
+     *
+     * @param $page
+     * @return mixed
+     */
+    public function page($page = 0)
+    {
+        if($page > 0){
+            return ['page' => $page];
+        }
+
+        return false;
+    }
+
+    /**
+     * @param $key
+     * @param mixed $value
+     * @return mixed
+     */
+    public function parameter($key, $value = false)
+    {
+        $this->parameter[] = [$key => $value];
+        if($value){
+            return [$key => $value];
+        }
+        return $key;
+    }
 }
