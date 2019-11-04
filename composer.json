@@ -20,6 +20,18 @@
             "email": "coen@pixelindustries.com",
             "homepage": "https://pxlwidgets.com",
             "role": "Developer"
+        },
+        {
+            "name": "hellodialog",
+            "email": "admin@hellodialog.com",
+            "homepage": "https://www.hellodialog.com",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Dave Hoeks",
+            "email": "dave@hellodialog.com",
+            "homepage": "https://www.hellodialog.com",
+            "role": "Maintainer"
         }
     ],
     "require": {
