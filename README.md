@@ -17,7 +17,7 @@ We've made it easy for you. You can find all possible API calls in the directory
 Via Composer
 
 ``` bash
-$ composer require hellodialog/api-wrapper
+$ composer require hellodialog/apiwrapper
 ```
 
 
