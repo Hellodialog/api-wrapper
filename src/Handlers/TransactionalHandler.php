@@ -1,36 +1,32 @@
 <?php
+
 namespace Hellodialog\ApiWrapper\Handlers;
 
 use Hellodialog\ApiWrapper\config\Hellodialog;
 use Hellodialog\ApiWrapper\Contracts\transactional\TransactionalInterface;
-use Hellodialog\ApiWrapper\Enums\ContactType;
-use Hellodialog\ApiWrapper\Exceptions\HelloDialogErrorException;
 use Hellodialog\ApiWrapper\Exceptions\HelloDialogGeneralException;
 use Hellodialog\ApiWrapper\HelloDialogHandler;
 use Exception;
-use Log;
-use Psr\Log\LoggerInterface;
-use UnexpectedValueException;
 
 class TransactionalHandler extends HelloDialogHandler implements TransactionalInterface
 {
     const API_TRANSACTIONAL = 'transactional';
 
     /**
-     * @param string      $to
-     * @param string      $subject
-     * @param int         $template
-     * @param null|array  $from associative, 'email', 'name' keys
-     * @param array       $replaces
-     * @param null|string $replyToMail
-     * @return bool
-     * @throws HelloDialogErrorException
-     * @throws HelloDialogGeneralException
+     * @param  string  $to
+     * @param  string  $subject
+     * @param  int  $template
+     * @param  null|array  $from  associative, 'email', 'name' keys
+     * @param  array  $replaces
+     * @param  null|string  $replyToMail
+     * @param  null  $tags
+     *
+     * @return bool|array
      */
-    public function transactional($to, $subject, $template = null, array $from = null, array $replaces = [], $replyToMail = null)
+    public function transactional($to, $subject, $template = null, array $from = null, array $replaces = [], $replyToMail = null, $tags = null)
     {
         $hdSettings = new Hellodialog();
-        $sender = $hdSettings->getSender();
+        $sender     = $hdSettings->getSender();
 
         $from = $from ?: $sender['email'];
 
@@ -41,7 +37,6 @@ class TransactionalHandler extends HelloDialogHandler implements TransactionalIn
         $normalizedReplaces = [];
 
         if ($replaces) {
-
             foreach ($replaces as $search => $replace) {
                 $normalizedReplaces[] = [
                     'find'    => $search,
@@ -58,7 +53,7 @@ class TransactionalHandler extends HelloDialogHandler implements TransactionalIn
                 'id'       => $template,
                 'replaces' => $normalizedReplaces,
             ],
-            'tag'           => $subject,
+            'tag'           => $tags ?: $subject,
             'force_sending' => true,
         ];
 
@@ -69,25 +64,17 @@ class TransactionalHandler extends HelloDialogHandler implements TransactionalIn
 
         try {
             $result = $this->getApiInstance(static::API_TRANSACTIONAL)
-                ->data($data)
-                ->post();
+                           ->data($data)
+                           ->post();
 
-            if ( ! $result) {
+            if (! $result) {
                 throw new HelloDialogGeneralException('No result given, configuration error?');
             }
 
-            /*if (config('hellodialog.debug')) {
-                $this->log(static::API_TRANSACTIONAL, 'debug', [
-                    'data'   => $data,
-                    'result' => $result,
-                ]);
-            }*/
-
             $this->checkForHelloDialogError($result);
-
         } catch (Exception $e) {
-
             $this->logException($e);
+
             return false;
         }
 
