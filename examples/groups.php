@@ -17,7 +17,7 @@ $groupsHandler = new GroupsHandler();
 
 // Get all groups
 try {
-    $groups = $groupsHandler->getGroups();
+    //$groups = $groupsHandler->getGroups();
     //print_r($groups);
 } catch (Exception $e) {
     print_r($e);
@@ -25,7 +25,7 @@ try {
 
 // Get a single group
 try {
-    $groups = $groupsHandler->getGroup(1);
+    //$groups = $groupsHandler->getGroup(1);
     //print_r($groups);
 } catch (Exception $e) {
     print_r($e);
@@ -33,7 +33,7 @@ try {
 
 // Get a single external group
 try {
-    $extGroups = $groupsHandler->getExternalGroup("20190624044140444");
+    //$extGroups = $groupsHandler->getExternalGroup("20190624044140444");
     //print_r($extGroups);
 } catch (Exception $e) {
     print_r($e);
@@ -46,8 +46,8 @@ try {
     $group->visible_name = 'Test Group';
     $group->description = 'A short description';
     $group->is_private = false;
-    //$result = $groupsHandler->createGroup($group);
-    //print_r($result);
+    $result = $groupsHandler->createGroup($group);
+    print_r($result);
 } catch (Exception $e) {
     print_r($e);
 }

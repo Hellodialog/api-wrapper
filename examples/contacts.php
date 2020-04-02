@@ -10,22 +10,22 @@
 
 use Hellodialog\ApiWrapper\Contracts\contacts\Contact;
 use Hellodialog\ApiWrapper\Handlers\ContactsHandler;
-require_once('vendor/autoload.php');
-require_once('src/config/Hellodialog.php');
+require_once('../vendor/autoload.php');
+require_once('../src/config/Hellodialog.php');
 
 $contactsHandler = new ContactsHandler();
 
 // Get all contacts
 try {
     $contacts = $contactsHandler->getContacts();
-    //print_r($contacts);
+    print_r($contacts);
 } catch (Exception $e) {
     print_r($e);
 }
 
 // Get all contacts with the same email
 try {
-    $contactsByEmail = $contactsHandler->getContactsByEmail("bart@hellodialog.com");
+    //$contactsByEmail = $contactsHandler->getContactsByEmail("bart@hellodialog.com");
     //print_r($contactsByEmail);
 } catch (Exception $e) {
     print_r($e);
@@ -37,7 +37,7 @@ try {
     $page = 2;
 
     // $page is not required
-    $contactsByConditions = $contactsHandler->getContactsByParameters($params, $page);
+    //$contactsByConditions = $contactsHandler->getContactsByParameters($params, $page);
     // print_r($contactsByConditions);
 } catch (Exception $e) {
     print($e);
@@ -45,7 +45,7 @@ try {
 
 // Get a single contact
 try {
-    $contactByEmail = $contactsHandler->getContactByEmail("bart@hellodialog.com");
+    //$contactByEmail = $contactsHandler->getContactByEmail("bart@hellodialog.com");
     //print_r($contactByEmail);
 } catch (Exception $e) {
     print_r($e);
@@ -53,7 +53,7 @@ try {
 
 // Get if email exists
 try {
-    $contactByEmail = $contactsHandler->checkIfEmailExists("bart@hellodialog.com");
+    //$contactByEmail = $contactsHandler->checkIfEmailExists("bart@hellodialog.com");
     //print_r($contactByEmail);
 } catch (Exception $e) {
     print_r($e);
@@ -80,7 +80,7 @@ try {
     $contact->email = 'test+'.mt_rand(0, 100).'@hellodialog.com';
     $contact->external_group_ids = [1];
     $contact->_state = 'Contact';
-    $result = $contactsHandler->createExternalContact($contact);
+    //$result = $contactsHandler->createExternalContact($contact);
     //print_r($result);
 } catch (Exception $e) {
     print_r($e);
@@ -95,7 +95,7 @@ try {
     $contactTwo = new Contact();
     $contactTwo->achternaam = 'Updated Another';
     $contacts[] = $contactTwo;
-    $result = $contactsHandler->updateContacts($contacts);
+    //$result = $contactsHandler->updateContacts($contacts);
     //print_r($result);
 } catch (Exception $e) {
     print_r($e);
@@ -105,7 +105,7 @@ try {
 try {
     $contact = new Contact();
     $contact->achternaam = 'Updated';
-    $result = $contactsHandler->updateContact(1, (array)$contact);
+    //$result = $contactsHandler->updateContact(1, (array)$contact);
     //print_r($result);
 } catch (Exception $e) {
     print_r($e);
@@ -114,7 +114,7 @@ try {
 // Delete a contact
 try {
     $id = 1;
-    $result = $contactsHandler->deleteContact($id);
+    //$result = $contactsHandler->deleteContact($id);
     //print_r($result);
 } catch (Exception $e) {
     print_r($e);
