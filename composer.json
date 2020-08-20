@@ -8,18 +8,12 @@
     ],
     "homepage": "https://github.com/Hellodialog/api-wrapper",
     "license": "MIT",
-    "version": "v1.0.0",
+    "version": "v1.0.1",
     "authors": [
         {
             "name": "Bart Ros",
             "email": "bart@hellodialog.com",
             "homepage": "https://hellodialog.com",
-            "role": "Developer"
-        },
-        {
-            "name": "Coen Zimmerman",
-            "email": "coen@pixelindustries.com",
-            "homepage": "https://pxlwidgets.com",
             "role": "Developer"
         },
         {

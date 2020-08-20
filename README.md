@@ -1,12 +1,18 @@
 # HelloDialog api-wrapper
+NO LONGER SUPPORTED!
+
+Please visit our [API documentation](https://docs.hellodialog.dev/v1/ "Documentation") to build your own.
+
 
 [![Software License][ico-license]](LICENSE.md)
 
-This is a php wrapper for connecting with the Hellodialog API V1
+This is a php wrapper for connecting with the Hellodialog API V1.
+
+The package uses Laravel 5.4 for some functions. This version is outdated.
 
 ## Documentation
 
-[You can find the complete API documentation (OpenAPI) here.](https://docs.hellodialog.dev "Documentation")
+[You can find the complete API documentation (OpenAPI) here.](https://docs.hellodialog.dev/v1/ "Documentation")
 
 ## Examples
 
@@ -49,7 +55,6 @@ Templates can be referred to by numerical ID, or the key set for their section i
 ## Credits
 
 - [Bart Ros][link-author]
-- [Coen Zimmerman][link-org-author]
 
 
 ## License
@@ -61,7 +66,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/czim/hellodialog.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/czim/hellodialog
-[link-downloads]: https://packagist.org/packages/czim/hellodialog
-[link-org-author]: https://github.com/czim
 [link-author]: https://github.com/BRdev
